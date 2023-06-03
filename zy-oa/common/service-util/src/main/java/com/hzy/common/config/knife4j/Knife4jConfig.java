@@ -1,4 +1,4 @@
-package com.hzy.config.knife4j;
+package com.hzy.common.config.knife4j;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
