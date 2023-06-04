@@ -30,5 +30,18 @@ export default {
       method: 'put',
       data: sysRole
     })
+  },
+  getById(id) {
+    return request({
+      url: `${api_name}/get/${id}`,
+      method: 'get'
+    })
+  },
+  batchRemove(ids) {
+    return request({
+      url: `${api_name}/batchRemove`,
+      method: 'delete',
+      data: ids
+    })
   }
 }
