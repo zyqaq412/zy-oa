@@ -1,8 +1,5 @@
 package com.hzy.auth.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hzy.auth.service.SysRoleService;
 import com.hzy.common.result.Result;
 import com.hzy.model.sytem.SysRole;
@@ -10,7 +7,6 @@ import com.hzy.vo.system.SysRoleQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,16 +27,23 @@ public class SysRoleController {
 
     @ApiOperation("查询所有角色")
     @GetMapping("/findAll")
-    public Result findAll(){
+    public Result findAll() {
         // 调用Service的方法
+        // 全局异常处理 自定义异常  测试
+/*        try {
+            int a =  1/0;
+        }catch (Exception e){
+            throw  new zyException(501,"自定义异常"+e.getMessage());
+        }*/
         List<SysRole> list = sysRoleService.list();
         return Result.ok(list);
     }
 
     /**
      * 条件分页查询
-     * @param page 当前页
-     * @param limit 每页显示记录数
+     *
+     * @param page           当前页
+     * @param limit          每页显示记录数
      * @param sysRoleQueryVo 条件对象
      * @return 查询结果
      */
@@ -49,22 +52,8 @@ public class SysRoleController {
     public Result pageQueryRole(@PathVariable Long page,
                                 @PathVariable Long limit,
                                 SysRoleQueryVo sysRoleQueryVo) {
-        // 调用service的方法实现
-        // 1 创建Page对象，传递分页相关参数
-        // page 当前页  limit 每页显示记录数
-        Page<SysRole> pageParam = new Page<>(page,limit);
 
-        // 2 封装条件，判断条件是否为空，不为空进行封装
-        LambdaQueryWrapper<SysRole> wrapper = new LambdaQueryWrapper<>();
-        String roleName = sysRoleQueryVo.getRoleName();
-        if(!StringUtils.isEmpty(roleName)) {
-            // 封装 like模糊查询
-            wrapper.like(SysRole::getRoleName,roleName);
-        }
-
-        // 3 调用方法实现
-        IPage<SysRole> pageModel = sysRoleService.page(pageParam, wrapper);
-        return Result.ok(pageModel);
+        return sysRoleService.pageQueryRole(page,limit,sysRoleQueryVo);
     }
 
     @ApiOperation(value = "获取")
