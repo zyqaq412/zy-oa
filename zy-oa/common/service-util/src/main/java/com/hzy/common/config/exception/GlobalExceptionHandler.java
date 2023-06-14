@@ -27,6 +27,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result error(zyException e){
         log.error(e.getMessage(),e);
-        return Result.fail().code(e.getCode()).message(e.getMessage());
+        return Result.fail()
+                .code(e.getCode())
+                .message(e.getMessage());
     }
 }
