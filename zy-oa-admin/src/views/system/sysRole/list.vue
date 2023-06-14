@@ -13,10 +13,11 @@
         <el-row style="display:flex">
           <el-button type="primary" icon="el-icon-search" size="mini" :loading="loading" @click="fetchData()">搜索
           </el-button>
-          <el-button icon="el-icon-refresh" size="mini" @click="resetData">重置</el-button>
-          <!-- 工具条 -->
           <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
           <el-button class="btn-add" size="mini" @click="batchRemove">批量删除</el-button>
+          <el-button icon="el-icon-refresh" size="mini" @click="resetData">重置</el-button>
+          <!-- 工具条 -->
+
         </el-row>
       </el-form>
     </div>

@@ -22,5 +22,12 @@ public interface SysUserService extends IService<SysUser> {
      * @return 查询结果
      */
     Result pageQueryRole(Long page, Long limit, SysUserQueryVo sysUserQueryVo);
+
+    /**
+     *  更改用户状态
+     * @param id 用户id
+     * @param status 状态值
+     */
+    void updateStatus(Long id, Integer status);
 }
 

@@ -9,6 +9,7 @@ import com.hzy.common.result.Result;
 import com.hzy.model.sytem.SysUser;
 import com.hzy.vo.system.SysUserQueryVo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 /**
@@ -39,5 +40,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         Page<SysUser> pageModel = page(sysUserPage, wrapper);
 
         return Result.ok(pageModel);
+    }
+
+    @Transactional
+    @Override
+    public void updateStatus(Long id, Integer status) {
+        SysUser sysUser = this.getById(id);
+        if(status.intValue() == 1) {
+            sysUser.setStatus(status);
+        } else {
+            sysUser.setStatus(0);
+        }
+        this.updateById(sysUser);
     }
 }
