@@ -1,4 +1,4 @@
-package com.hzy.model.sytem;
+package com.hzy.model.system;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
