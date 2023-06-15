@@ -2,10 +2,11 @@ package com.hzy.auth;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.hzy.auth.mapper.SysRoleMapper;
-import com.hzy.model.sytem.SysRole;
+import com.hzy.model.system.SysRole;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
@@ -42,5 +43,13 @@ public class SysRoleMapperTest {
         queryWrapper.eq(SysRole::getRoleCode,"SYSTEM");
         // 断言
         assert  sysRoleMapper.delete(queryWrapper) == 1;
+    }
+    @Test
+    public void md5(){
+       // String str = "96e79218965eb72c92a549dd5a330112";
+        String str = "12345678";
+        String passwordMD5 = DigestUtils.md5DigestAsHex(str.getBytes());
+        System.out.println(passwordMD5);
+
     }
 }

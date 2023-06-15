@@ -1,7 +1,7 @@
 package com.hzy.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hzy.model.sytem.SysUserRole;
+import com.hzy.model.system.SysUserRole;
 
 
 /**

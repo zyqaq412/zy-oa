@@ -1,7 +1,7 @@
 package com.hzy.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzy.model.sytem.SysRole;
+import com.hzy.model.system.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

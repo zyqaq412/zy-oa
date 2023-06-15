@@ -2,7 +2,7 @@ package com.hzy.auth.controller;
 
 import com.hzy.auth.service.SysMenuService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysMenu;
+import com.hzy.model.system.SysMenu;
 import com.hzy.vo.system.AssginMenuVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

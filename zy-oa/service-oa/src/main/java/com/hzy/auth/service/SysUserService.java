@@ -2,7 +2,7 @@ package com.hzy.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysUser;
+import com.hzy.model.system.SysUser;
 import com.hzy.vo.system.SysUserQueryVo;
 
 

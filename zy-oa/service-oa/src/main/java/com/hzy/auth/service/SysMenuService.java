@@ -1,8 +1,9 @@
 package com.hzy.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hzy.model.sytem.SysMenu;
+import com.hzy.model.system.SysMenu;
 import com.hzy.vo.system.AssginMenuVo;
+import com.hzy.vo.system.RouterVo;
 
 import java.util.List;
 
@@ -39,5 +40,19 @@ public interface SysMenuService extends IService<SysMenu> {
      * @param id 菜单id
      */
     void removeMenuById(Long id);
+
+    /**
+     *
+     * @param userId 用户id
+     * @return 菜单
+     */
+    List<RouterVo> findUserMenuListByUserId(Long userId);
+
+    /**
+     *
+     * @param userId 用户id
+     * @return 按钮
+     */
+    List<String> findUserPermsByUserId(Long userId);
 }
 

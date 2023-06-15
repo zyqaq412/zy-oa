@@ -2,7 +2,7 @@ package com.hzy.auth.controller;
 
 import com.hzy.auth.service.SysRoleService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysRole;
+import com.hzy.model.system.SysRole;
 import com.hzy.vo.system.AssginRoleVo;
 import com.hzy.vo.system.SysRoleQueryVo;
 import io.swagger.annotations.Api;

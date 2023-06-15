@@ -1,7 +1,7 @@
 package com.hzy.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzy.model.sytem.SysUser;
+import com.hzy.model.system.SysUser;
 
 
 /**

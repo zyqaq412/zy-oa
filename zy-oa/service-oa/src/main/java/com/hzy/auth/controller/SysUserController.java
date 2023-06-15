@@ -2,7 +2,7 @@ package com.hzy.auth.controller;
 
 import com.hzy.auth.service.SysUserService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysUser;
+import com.hzy.model.system.SysUser;
 import com.hzy.vo.system.SysUserQueryVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

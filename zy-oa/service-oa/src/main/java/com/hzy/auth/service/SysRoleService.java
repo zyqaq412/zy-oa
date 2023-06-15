@@ -2,7 +2,7 @@ package com.hzy.auth.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysRole;
+import com.hzy.model.system.SysRole;
 import com.hzy.vo.system.AssginRoleVo;
 import com.hzy.vo.system.SysRoleQueryVo;
 

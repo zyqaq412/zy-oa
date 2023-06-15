@@ -3,7 +3,7 @@ package com.hzy.auth.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hzy.auth.mapper.SysRoleMenuMapper;
 import com.hzy.auth.service.SysRoleMenuService;
-import com.hzy.model.sytem.SysRoleMenu;
+import com.hzy.model.system.SysRoleMenu;
 import org.springframework.stereotype.Service;
 
 /**

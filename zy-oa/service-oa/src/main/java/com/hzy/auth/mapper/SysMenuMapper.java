@@ -1,7 +1,10 @@
 package com.hzy.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzy.model.sytem.SysMenu;
+import com.hzy.model.system.SysMenu;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 
 /**
@@ -12,4 +15,5 @@ import com.hzy.model.sytem.SysMenu;
  */
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
+    List<SysMenu> findMenuListByUserId(@Param("userId") Long userId);
 }

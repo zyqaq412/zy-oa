@@ -7,7 +7,7 @@ package com.hzy.auth.utils;
  * @Version 1.0
  */
 
-import com.hzy.model.sytem.SysMenu;
+import com.hzy.model.system.SysMenu;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hzy.auth.mapper.SysUserMapper;
 import com.hzy.auth.service.SysUserService;
 import com.hzy.common.result.Result;
-import com.hzy.model.sytem.SysUser;
+import com.hzy.model.system.SysUser;
 import com.hzy.vo.system.SysUserQueryVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
