@@ -13,8 +13,11 @@
         <el-row style="display:flex">
           <el-button type="primary" icon="el-icon-search" size="mini" :loading="loading" @click="fetchData()">搜索
           </el-button>
-          <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
-          <el-button class="btn-add" size="mini" @click="batchRemove">批量删除</el-button>
+<!--          <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>-->
+          <el-button
+            type="success" icon="el-icon-plus" size="mini" @click="add"
+            :disabled="$hasBP('bnt.sysRole.add')  === false">添 加</el-button>
+          <el-button class="btn-add" size="mini" @click="batchRemove" :disabled="$hasBP('bnt.sysRole.remove')  === false">批量删除</el-button>
           <el-button icon="el-icon-refresh" size="mini" @click="resetData">重置</el-button>
           <!-- 工具条 -->
 
@@ -48,13 +51,18 @@
       <el-table-column prop="createTime" label="创建时间" width="160"/>
       <el-table-column label="操作" width="200" align="center">
         <template slot-scope="scope">
-          <el-button type="primary" icon="el-icon-edit" size="mini" title="修改" @click="edit(scope.row.id)"/>
+          <el-button type="primary" icon="el-icon-edit" size="mini" title="修改" @click="edit(scope.row.id)"
+                     :disabled="$hasBP('bnt.sysRole.update')  === false"/>
           <el-button
             type="danger"
             icon="el-icon-delete"
             size="mini"
             title="删除"
             @click="removeDataById(scope.row.id)"
+            :disabled="$hasBP('bnt.sysRole.remove')  === false"
+          />
+          <el-button type="warning" icon="el-icon-baseball" size="mini" @click="showAssignAuth(scope.row)"
+                     title="分配权限" :disabled="$hasBP('bnt.sysRole.assignAuth')  === false"
           />
         </template>
       </el-table-column>
@@ -108,6 +116,9 @@ export default {
   },
   // 定义方法
   methods: {
+    showAssignAuth(row) {
+      this.$router.push('/system/assignAuth?id=' + row.id + '&roleName=' + row.roleName)
+    },
     fetchData(current = 1) {
       this.page = current
       // 调用api
