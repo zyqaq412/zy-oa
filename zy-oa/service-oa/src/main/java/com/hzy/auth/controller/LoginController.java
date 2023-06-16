@@ -70,9 +70,10 @@ public class LoginController {
      */
     @GetMapping("info")
     public Result info(HttpServletRequest request) {
-        String token = request.getHeader("header");
-
+        String token = request.getHeader("token");
+        System.out.println(token);
         Long userId = JwtHelper.getUserId(token);
+
 
         SysUser user = sysUserService.getById(userId);
 
