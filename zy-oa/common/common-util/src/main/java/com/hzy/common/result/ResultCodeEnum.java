@@ -18,7 +18,7 @@ public enum ResultCodeEnum {
     LOGIN_ERROR(204, "认证失败"),
 
     LOGIN_AUTH(208, "未登陆"),
-    PERMISSION(209, "没有权限"),
+    PERMISSION(209, "权限不足"),
     ;
 
     private Integer code;
