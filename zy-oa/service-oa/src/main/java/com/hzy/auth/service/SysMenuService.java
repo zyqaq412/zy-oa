@@ -51,7 +51,7 @@ public interface SysMenuService extends IService<SysMenu> {
     /**
      *
      * @param userId 用户id
-     * @return 按钮
+     * @return 按钮权限
      */
     List<String> findUserPermsByUserId(Long userId);
 }

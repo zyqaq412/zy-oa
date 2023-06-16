@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result error(Exception e){
         log.error("发生异常",e);
-        return Result.fail(e.getMessage());
+        return Result.fail().message(e.getMessage());
     }
 
     @ExceptionHandler(zyException.class)

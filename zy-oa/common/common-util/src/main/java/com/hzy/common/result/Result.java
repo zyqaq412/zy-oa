@@ -68,20 +68,23 @@ public class Result<T> {
     /**
      * 操作失败
      *
-     * @param data
+     * @param message
      * @param <T>
      * @return
      */
 
-    public static <T> Result<T> fail(T data) {
-        Result<T> result = build(data);
-        return build(data, ResultCodeEnum.FAIL);
+    public static <T> Result<T> fail(String message) {
+        Result<T> result = fail();
+        result.setMessage(message);
+        return result;
     }
 
     public static <T> Result<T> fail() {
-        return Result.fail(null);
+        return Result.build(null,ResultCodeEnum.FAIL);
     }
-
+    public static <T> Result<T> fail(ResultCodeEnum resultCodeEnum) {
+        return Result.build(null,resultCodeEnum);
+    }
     public Result<T> message(String msg) {
         this.setMessage(msg);
         return this;
