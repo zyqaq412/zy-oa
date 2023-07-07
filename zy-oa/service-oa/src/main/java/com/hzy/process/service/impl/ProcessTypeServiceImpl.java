@@ -1,8 +1,8 @@
-package com.hzy.auth.service.impl;
+package com.hzy.process.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hzy.auth.mapper.ProcessTypeMapper;
-import com.hzy.auth.service.ProcessTypeService;
+import com.hzy.process.mapper.ProcessTypeMapper;
+import com.hzy.process.service.ProcessTypeService;
 import com.hzy.model.process.ProcessType;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author makejava
  * @since 2023-07-07 21:27:11
  */
-@Service("oaProcessTypeService")
+@Service
 public class ProcessTypeServiceImpl extends ServiceImpl<ProcessTypeMapper, ProcessType> implements ProcessTypeService {
 
 }

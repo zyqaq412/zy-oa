@@ -1,4 +1,4 @@
-package com.hzy.auth.service;
+package com.hzy.process.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hzy.model.process.ProcessType;

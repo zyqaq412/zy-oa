@@ -1,4 +1,4 @@
-package com.hzy.auth.mapper;
+package com.hzy.process.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hzy.model.process.ProcessTemplate;

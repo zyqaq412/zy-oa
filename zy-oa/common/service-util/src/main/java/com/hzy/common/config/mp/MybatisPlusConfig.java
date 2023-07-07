@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.hzy.auth.mapper")
+@MapperScan(basePackages = {"com.hzy.auth.mapper","com.hzy.process.mapper"})
 public class MybatisPlusConfig {
 
     /*
