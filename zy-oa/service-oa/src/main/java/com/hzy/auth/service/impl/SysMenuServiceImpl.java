@@ -98,7 +98,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         // 获取全部菜单
         LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(SysMenu::getParentId, id);
-        int count = count(wrapper);
+        long count = count(wrapper);
         if (count > 0) {
             throw new zyException(ResultCodeEnum.FAIL.getCode(), "菜单不能删除");
         }
